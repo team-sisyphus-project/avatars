@@ -3,7 +3,6 @@
   "description": "Autosquad Avatars \u2014 a playful avatar generator",
   "version": "2.0.0",
   "private": true,
-  "packageManager": "yarn@4.17.0",
   "license": "MIT",
   "keywords": [
     "personas",
@@ -13,9 +12,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cclss/autosquad-avatars"
-  },
-  "engines": {
-    "node": ">=22"
   },
   "scripts": {
     "clean": "rescript clean",
