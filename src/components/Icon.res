@@ -28,24 +28,5 @@ let make = (~style=?, ~name) =>
         transform="translate(-456 -1015)"
       />
     </svg>
-  | "wordmark" =>
-    <svg viewBox="0 0 330 100" width="150" xmlns="http://www.w3.org/2000/svg" role="img">
-      <rect x="0" y="0" width="100" height="100" rx="22" fill="#f1534a" />
-      <rect x="14" y="14" width="20" height="20" rx="5" fill="#ececec" />
-      <rect x="40" y="14" width="20" height="20" rx="5" fill="#ececec" />
-      <rect x="66" y="14" width="20" height="20" rx="5" fill="#ececec" />
-      <rect x="14" y="40" width="20" height="20" rx="5" fill="#ececec" fillOpacity="0.72" />
-      <rect x="40" y="40" width="20" height="20" rx="5" fill="#ececec" fillOpacity="0.72" />
-      <rect x="14" y="66" width="20" height="20" rx="5" fill="#ececec" fillOpacity="0.55" />
-      <path
-        d="M76 58v28M64.9 64.5l22.2 15M64.9 79.5l22.2-15"
-        stroke="#ececec"
-        strokeWidth="7"
-        strokeLinecap="round"
-      />
-      <text x="120" y="63" fill="#f3ece1" fontSize="31" fontWeight="650">
-        {React.string("autosquad")}
-      </text>
-    </svg>
   | _ => React.null
   }

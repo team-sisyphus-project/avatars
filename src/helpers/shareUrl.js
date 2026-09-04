@@ -3,7 +3,7 @@
 // Two forms:
 //  - Readable query params (?hair=Mohawk&hairColor=F2C94C...) — what the
 //    address bar shows; self-documenting and constructable by hand.
-//  - Compact short code (avatars.autosquad.co/<code>) — a bit-packed,
+//  - Compact short code (origin + /<code>) — a bit-packed,
 //    base64url encoding of the same config, used by the share buttons.
 //
 // Values are validated on read: style names must exist in config, colors

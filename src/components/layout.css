@@ -72,6 +72,10 @@ html {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .Layout-footer .Text-marketing {
+    max-width: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -88,9 +92,11 @@ html {
   }
 
   .Layout-footer {
-    display: flex;
-    align-items: center;
     padding-bottom: 84px;
+  }
+
+  .Layout-footer .Text-marketing {
+    max-width: var(--as-content-max-width-sm);
   }
 
   .Layout-left {

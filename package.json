@@ -1,6 +1,6 @@
 {
-  "name": "autosquad-avatars",
-  "description": "Autosquad Avatars \u2014 a playful avatar generator",
+  "name": "avatar-generator",
+  "description": "Avatars \u2014 a playful avatar generator",
   "version": "2.0.0",
   "private": true,
   "license": "MIT",
@@ -9,10 +9,6 @@
     "persona-avatar-generator",
     "rescript"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cclss/autosquad-avatars"
-  },
   "scripts": {
     "clean": "rescript clean",
     "re:build": "rescript",

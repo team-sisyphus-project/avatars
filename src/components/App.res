@@ -88,9 +88,8 @@ let make = (
     <div className="body-bg-right" />
     <header className="Layout-header">
       <div className="Layout-left">
-        <Wordmark placement="header-wordmark" />
         <h1 className="Text-title"> {React.string("Avatars")} </h1>
-        <span className="Text-subtitle"> {React.string("Autosquad Avatar Generator")} </span>
+        <span className="Text-subtitle"> {React.string("Avatar Generator")} </span>
       </div>
       <div className="Layout-right">
         <h2 className="Text-description">
@@ -102,27 +101,10 @@ let make = (
       <AvatarGenerator onChange onExport randomize settings />
     </main>
     <footer className="Layout-footer">
-      <div className="Layout-left">
-        <span className="Text-overline"> {React.string("Made with")} </span>
-        <br />
-        <Wordmark placement="footer-wordmark" />
-      </div>
-      <div className="Layout-right">
-        <span className="Text-marketing mb-2">
-          {React.string("Ship software with squads of agents that plan, build, and review together.")}
-        </span>
-        <br />
-        <IconLink
-          href="https://autosquad.co"
-          title="Autosquad — build software with agent squads"
-          label="autosquad.co"
-          icon="arrow"
-        />
-      </div>
+      <span className="Text-marketing">
+        {React.string("Ship software with squads of agents that plan, build, and review together.")}
+      </span>
     </footer>
-    <div style={{textAlign: "center", marginBottom: "36px"}}>
-      <Button href="https://github.com/cclss/autosquad-avatars" label="View on Github" />
-    </div>
     <Modal visible=showModal onToggle=onToggleModal shareUrl />
   </>
 }
