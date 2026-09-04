@@ -1,12 +1,12 @@
-/* Autosquad brand tokens — light surface.
-   Brand colour is taken from the Autosquad product stylesheet
+/* Brand tokens — light surface.
+   Brand colour is taken from the product stylesheet
    (assets/css/app.css): coral-red #f1534a. Surfaces are light here because
    the avatar artwork draws eyes, nose and mouth in black with no fill of
    its own, so it needs a light ground to read against. */
 :root {
   /* The split background behind the header and footer. Upstream's two-panel
-     layout is kept; only the colours moved to the Autosquad palette. */
-  --as-panel-dark: #16130f;  /* left panel — Autosquad midnight */
+     layout is kept; only the colours moved to the current palette. */
+  --as-panel-dark: #16130f;  /* left panel — midnight */
   --as-panel-light: #faf8f6; /* right panel */
 
   /* surfaces */
@@ -30,7 +30,7 @@
   --as-line: rgba(28, 24, 21, 0.1);
   --as-line-strong: rgba(28, 24, 21, 0.18);
 
-  /* shape — Autosquad keeps corners tight */
+  /* shape — corners kept tight */
   --as-radius: 6px;
   --as-radius-sm: 4px;
 

@@ -1,4 +1,4 @@
-# Autosquad Avatars
+# Avatars
 
 Build a face for every squad member. Mix, match, and download.
 
@@ -41,9 +41,10 @@ This is a rebrand and cleanup of [draftbit/avatar-generator](https://github.com/
 The avatar artwork and the core generator are unchanged.
 
 **Branding**
-- Draftbit logo, wordmark, copy, links and Product Hunt button replaced with Autosquad
+- Draftbit logo, wordmark, copy, links and Product Hunt button removed; the
+  header and footer now carry plain text instead of a wordmark
 - Colour values were scattered across eight stylesheets; they now live in one
-  `src/components/tokens.css` and carry the Autosquad palette
+  `src/components/tokens.css` and carry a single palette
 - Bundled Cerebri Sans font files removed (a commercial typeface); the app now
   uses the platform UI font stack
 
