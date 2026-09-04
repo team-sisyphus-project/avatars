@@ -73,6 +73,8 @@ let make = (~randomize, ~settings: array<Types.setting>, ~onChange, ~onExport) =
             | #Hair => #HairColor
             | #FacialHair => #FacialHairColor
             | #Body => #BodyColor
+            | #Eyes => #EyesColor
+            | #Mouth => #MouthColor
             | #Accessories => #AccessoriesColor
             | #Background => #BackgroundColor
             | _ => Js.Exn.raiseError("ColorNotFound: " ++ (o.id :> string))
