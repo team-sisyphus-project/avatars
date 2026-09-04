@@ -42,4 +42,7 @@
   --as-on-dark-muted: rgba(243, 236, 225, 0.62);
 
   --as-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* spacing */
+  --as-content-max-width-sm: 480px;
 }

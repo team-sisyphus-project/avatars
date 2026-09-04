@@ -96,7 +96,7 @@ html {
   }
 
   .Layout-footer .Text-marketing {
-    max-width: 480px;
+    max-width: var(--as-content-max-width-sm);
   }
 
   .Layout-left {
