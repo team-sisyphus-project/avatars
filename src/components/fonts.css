@@ -1,0 +1,6 @@
+/* Autosquad uses Pretendard for UI text and Geist Mono for code.
+   Both are declared as font stacks in tokens.css and fall back to the
+   platform's own UI font, so no font files are bundled with this app.
+
+   The upstream project shipped Cerebri Sans (a commercial typeface).
+   Those files were removed during the Autosquad rebrand. */

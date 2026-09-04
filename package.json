@@ -1,0 +1,43 @@
+{
+  "name": "autosquad-avatars",
+  "description": "Autosquad Avatars \u2014 a playful avatar generator",
+  "version": "2.0.0",
+  "private": true,
+  "packageManager": "yarn@4.17.0",
+  "license": "MIT",
+  "keywords": [
+    "personas",
+    "persona-avatar-generator",
+    "rescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cclss/autosquad-avatars"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "clean": "rescript clean",
+    "re:build": "rescript",
+    "re:watch": "rescript -w",
+    "dev": "vite",
+    "build": "rescript && vite build",
+    "preview": "vite preview",
+    "format": "prettier --write 'src/**/*.{js,css}' 'index.html' && rescript format -all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.13.1",
+    "html2canvas": "^1.4.1",
+    "normalize.css": "^8.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "prettier": "^3.6.2",
+    "rescript": "^11.1.4",
+    "vite": "^7.0.0"
+  }
+}

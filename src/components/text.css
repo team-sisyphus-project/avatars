@@ -1,0 +1,127 @@
+.Text-title {
+  font-family: var(--as-font);
+  font-size: 70px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -1px;
+  color: var(--as-on-dark);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .Text-title {
+    font-size: 80px;
+  }
+}
+
+.Text-subtitle {
+  font-family: var(--as-font);
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: var(--as-brand);
+  text-transform: uppercase;
+}
+
+.Text-description {
+  font-family: var(--as-font);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: -0.6px;
+  color: var(--as-text-muted);
+}
+
+@media (min-width: 768px) {
+  .Text-description {
+    max-width: 330px;
+  }
+}
+
+.Text-overline {
+  font-family: var(--as-font);
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--as-on-dark-muted);
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.Text-marketing {
+  font-family: var(--as-font);
+  font-size: 22px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.45;
+  letter-spacing: normal;
+  color: #62738a;
+  display: inline-block;
+  max-width: 370px;
+}
+
+.Text-link {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: var(--as-font);
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: var(--as-brand);
+}
+
+.Button-primary {
+  padding: 17px 32px 17px 32px;
+  background: var(--as-brand);
+  border: none;
+  box-shadow: 0 2px 3px 0 rgba(16, 22, 64, 0.12);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Text-button {
+  font-family: var(--as-font);
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  color: var(--as-text);
+}
+
+.Text-cta-title {
+  font-family: var(--as-font);
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--as-surface-0);
+}
+
+.Text-cta-subtitle {
+  font-family: var(--as-font);
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--as-text-muted);
+}

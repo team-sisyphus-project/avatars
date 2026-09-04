@@ -1,0 +1,35 @@
+.Button {
+  padding: 16px;
+  border: none;
+  border-radius: var(--as-radius);
+  border: 1px solid var(--as-line);
+  box-shadow: none;
+  background-color: var(--as-surface-2);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .Button--github {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.Button-icon {
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Button-label {
+  font-family: var(--as-font);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--as-text);
+  vertical-align: middle;
+}

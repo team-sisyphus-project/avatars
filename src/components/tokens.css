@@ -1,0 +1,45 @@
+/* Autosquad brand tokens — light surface.
+   Brand colour is taken from the Autosquad product stylesheet
+   (assets/css/app.css): coral-red #f1534a. Surfaces are light here because
+   the avatar artwork draws eyes, nose and mouth in black with no fill of
+   its own, so it needs a light ground to read against. */
+:root {
+  /* The split background behind the header and footer. Upstream's two-panel
+     layout is kept; only the colours moved to the Autosquad palette. */
+  --as-panel-dark: #16130f;  /* left panel — Autosquad midnight */
+  --as-panel-light: #faf8f6; /* right panel */
+
+  /* surfaces */
+  --as-surface-0: #faf8f6; /* page background — warm off-white */
+  --as-surface-1: #ffffff; /* cards */
+  --as-surface-2: #f1eeea; /* raised / hover */
+  --as-surface-3: #e7e2dc; /* elevated */
+
+  /* text */
+  --as-text: #1c1815;
+  --as-text-muted: #6b635a;
+  --as-text-faint: #9a9188;
+
+  /* brand */
+  --as-brand: #f1534a; /* coral red */
+  --as-brand-hover: #d94339;
+  --as-brand-soft: rgba(241, 83, 74, 0.12);
+  --as-brand-contrast: #ffffff;
+
+  /* lines */
+  --as-line: rgba(28, 24, 21, 0.1);
+  --as-line-strong: rgba(28, 24, 21, 0.18);
+
+  /* shape — Autosquad keeps corners tight */
+  --as-radius: 6px;
+  --as-radius-sm: 4px;
+
+  /* type */
+  --as-font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  /* Text that sits on the dark left panel */
+  --as-on-dark: #f3ece1;
+  --as-on-dark-muted: rgba(243, 236, 225, 0.62);
+
+  --as-font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
