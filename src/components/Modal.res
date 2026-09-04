@@ -31,7 +31,7 @@ let make = (~visible, ~onToggle, ~shareUrl: string) => {
             <a
               target="_blank"
               rel="no-follow"
-              href={"https://twitter.com/intent/tweet?text=I+made+this+avatar+with+Autosquad+Avatars&url=" ++
+              href={"https://twitter.com/intent/tweet?text=I+made+this+avatar&url=" ++
               Js.Global.encodeURIComponent(shareUrl) ++ ""}
               className="Modal-button Modal-button--twitter">
               <img className="Modal-shareIcon" width="16" height="16" src="/images/twitter.svg" />
