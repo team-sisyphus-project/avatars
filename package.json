@@ -1,6 +1,6 @@
 {
   "name": "autosquad-avatars",
-  "description": "Autosquad Avatars \u2014 a playful avatar generator",
+  "description": "Autosquad Avatars — a playful avatar generator",
   "version": "2.0.0",
   "private": true,
   "license": "MIT",
@@ -21,7 +21,7 @@
     "build": "rescript && vite build",
     "preview": "vite preview",
     "format": "prettier --write 'src/**/*.{js,css}' 'index.html' && rescript format -all",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "rescript && vitest run"
   },
   "dependencies": {
     "@rescript/react": "^0.13.1",
@@ -34,6 +34,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "prettier": "^3.6.2",
     "rescript": "^11.1.4",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "vitest": "^5.0.0"
   }
 }
