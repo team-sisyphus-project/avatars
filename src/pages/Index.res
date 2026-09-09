@@ -13,6 +13,9 @@ external writeStylesToUrl: Types.styles => unit = "writeStylesToUrl"
 @module("../helpers/shareUrl.js")
 external shortShareUrl: (Types.config, Types.styles) => string = "shortShareUrl"
 
+@module("../helpers/presets.js")
+external resolvePresets: Types.config => array<Types.preset> = "resolvePresets"
+
 let randomizeStyles = (config: Types.config): Types.styles => {
   let getRandom = _list => {
     let len = Array.length(_list)
@@ -74,6 +77,9 @@ let make = () => {
 
   let randomize = () => setStyles(_ => randomizeStyles(config))
 
+  let presets = resolvePresets(config)
+  let onSelectPreset = (preset: Types.styles) => setStyles(_ => preset)
+
   let exportImage = () => {
     setShowModal(_ => true)
     exportImageAsync()
@@ -86,6 +92,8 @@ let make = () => {
       config
       onChange
       randomize
+      presets
+      onSelectPreset
       shareUrl={shortShareUrl(config, styles)}
       onToggleModal={_ => setShowModal(_ => false)}
       onExport={_ => exportImage()}

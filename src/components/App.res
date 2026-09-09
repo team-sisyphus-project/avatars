@@ -8,8 +8,12 @@ let make = (
   ~shareUrl: string,
   ~styles: Types.styles,
   ~config: Types.config,
+  ~presets: array<Types.preset>,
+  ~onSelectPreset: Types.styles => unit,
 ) => {
-  let settings: array<Types.setting> = [
+  // Map a styles record onto the per-feature settings the avatar renders from.
+  // Used for the live avatar and, via AvatarGenerator, for each preset thumbnail.
+  let buildSettings = (styles: Types.styles): array<Types.setting> => [
     {
       id: #Skin,
       label: "SKIN",
@@ -83,6 +87,7 @@ let make = (
       selectedStyle: "Background",
     },
   ]
+  let settings = buildSettings(styles)
   <>
     <div className="body-bg-left" />
     <div className="body-bg-right" />
@@ -99,7 +104,15 @@ let make = (
       </div>
     </header>
     <main className="Layout-main">
-      <AvatarGenerator onChange onExport randomize settings />
+      <AvatarGenerator
+        onChange
+        onExport
+        randomize
+        settings
+        presets
+        settingsFor=buildSettings
+        onSelectPreset
+      />
     </main>
     <footer className="Layout-footer">
       <div className="Layout-left">

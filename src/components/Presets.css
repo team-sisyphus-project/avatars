@@ -1,0 +1,67 @@
+.Presets-container {
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Presets-heading {
+  margin-bottom: 12px;
+}
+
+.Presets-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 520px;
+}
+
+.Presets-item {
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+  transition:
+    transform 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.Presets-item:hover,
+.Presets-item:focus-visible {
+  border-color: var(--as-brand);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.Presets-thumb {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--as-surface-2);
+  border: solid 1px var(--as-line);
+}
+
+.Presets-feature {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 768px) {
+  .Presets-container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}

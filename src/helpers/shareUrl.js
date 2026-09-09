@@ -165,6 +165,29 @@ function stylesToParams(styles) {
   return params;
 }
 
+// Overlay URL-named params onto `base`, validating each value: style names must
+// exist in config, colors must be 6-digit hex (they get interpolated into
+// inline SVG markup). `get` maps a param name to its raw string value — a
+// URLSearchParams.get for query strings, a plain object lookup for presets — so
+// both the address bar and the presets module honour one contract.
+function overlay(config, base, get) {
+  const styles = { ...base };
+  for (const [key, listKey] of STYLE_KEYS) {
+    const v = get(key);
+    if (v && config[listKey].includes(v)) styles[key] = v;
+  }
+  for (const key of COLOR_KEYS) {
+    const v = get(key);
+    if (v && HEX.test(v)) styles[key] = v.toUpperCase();
+  }
+  return styles;
+}
+
+// Overlay a plain object keyed by URL parameter names onto base styles.
+export function overlayParams(config, base, params) {
+  return overlay(config, base, (key) => params[key]);
+}
+
 // Resolve the initial styles: a short code in the path wins, then query
 // params overlay onto `base` (a full random styles record).
 export function readStylesFromUrl(config, base) {
@@ -174,16 +197,7 @@ export function readStylesFromUrl(config, base) {
     if (decoded) return { ...base, ...decoded };
   }
   const params = new URLSearchParams(window.location.search);
-  const styles = { ...base };
-  for (const [key, listKey] of STYLE_KEYS) {
-    const v = params.get(key);
-    if (v && config[listKey].includes(v)) styles[key] = v;
-  }
-  for (const key of COLOR_KEYS) {
-    const v = params.get(key);
-    if (v && HEX.test(v)) styles[key] = v.toUpperCase();
-  }
-  return styles;
+  return overlay(config, base, (key) => params.get(key));
 }
 
 export function writeStylesToUrl(styles) {

@@ -19,7 +19,15 @@ type state = {rotation: int}
 type action = Randomize
 
 @react.component
-let make = (~randomize, ~settings: array<Types.setting>, ~onChange, ~onExport) => {
+let make = (
+  ~randomize,
+  ~settings: array<Types.setting>,
+  ~onChange,
+  ~onExport,
+  ~presets: array<Types.preset>,
+  ~settingsFor: Types.styles => array<Types.setting>,
+  ~onSelectPreset: Types.styles => unit,
+) => {
   let (state, dispatch) = React.useReducer((state, action) =>
     switch action {
     | Randomize =>
@@ -57,6 +65,7 @@ let make = (~randomize, ~settings: array<Types.setting>, ~onChange, ~onExport) =
       {React.string("Randomize")}
       <Icon name="randomize" style={{transform: rotation}} />
     </button>
+    <Presets presets settingsFor onSelect=onSelectPreset getZIndex />
     <div className="AvatarGenerator-row">
       {Belt.Array.map(settings, o =>
         <Styler

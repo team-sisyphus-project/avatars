@@ -55,6 +55,11 @@ type styles = {
   head: string,
 }
 
+type preset = {
+  name: string,
+  styles: styles,
+}
+
 type setting = {
   id: id,
   label: string,
