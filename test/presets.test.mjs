@@ -7,6 +7,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 import { PRESETS, presetStyles, resolvePresets } from "../src/helpers/presets.js";
+import { encodeStylesToCode, decodeCodeToStyles } from "../src/helpers/shareUrl.js";
 
 const config = JSON.parse(
   readFileSync(new URL("../src/data/config.json", import.meta.url)),
@@ -98,6 +99,63 @@ test("resolvePresets pairs each name with its resolved styles", () => {
     assert.equal(entry.name, PRESETS[i].name);
     assert.equal(entry.styles.bgColor, PRESETS[i].params.bgColor.toUpperCase());
   });
+});
+
+// Every field the nine pickers read from a styles record. App.res builds one
+// setting per picker straight off these fields, so a preset that leaves any of
+// them unset would land a picker on the random base look instead of the preset.
+// (`head` carries no picker; the Background picker's style is the fixed literal
+// "Background", so only its bgColor field is listed.)
+const PICKER_FIELDS = [
+  "skin",
+  "skinColor",
+  "hair",
+  "hairColor",
+  "facialHair",
+  "facialHairColor",
+  "body",
+  "bodyColor",
+  "eyes",
+  "eyesColor",
+  "mouth",
+  "mouthColor",
+  "nose",
+  "accessories",
+  "accessoriesColor",
+  "bgColor",
+];
+
+test("selecting a preset fills every picker — none falls back to the base", () => {
+  // Applying a preset replaces the whole styles record (Index.res onSelectPreset),
+  // so every picker reflects the preset only if the resolved record defines a value
+  // for each picker-backed field. An undefined here is a picker showing the old look.
+  for (const preset of PRESETS) {
+    const styles = presetStyles(config, preset.params);
+    for (const field of PICKER_FIELDS) {
+      assert.ok(
+        styles[field] !== undefined && styles[field] !== "",
+        `${preset.name}: picker field "${field}" is unset`,
+      );
+    }
+  }
+});
+
+test("the share link reproduces each preset (encode → decode is identity)", () => {
+  // The share link is the compact code shortShareUrl builds from the current
+  // styles. Reproducing a preset means decoding that code yields byte-for-byte the
+  // same styles that were applied — the round-trip every share link relies on.
+  for (const preset of PRESETS) {
+    const styles = presetStyles(config, preset.params);
+    const code = encodeStylesToCode(config, styles);
+    assert.ok(code, `${preset.name}: styles did not encode to a share code`);
+    const decoded = decodeCodeToStyles(config, code);
+    assert.ok(decoded, `${preset.name}: share code "${code}" did not decode`);
+    assert.deepEqual(
+      decoded,
+      styles,
+      `${preset.name}: share code did not reproduce the preset`,
+    );
+  }
 });
 
 test("presets are balanced across skin tones and accessories", () => {
